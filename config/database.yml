@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
+  port: 5432
+  username: <%= ENV['GIVEAWAY_DATABASE_USERNAME'] %>
+  password: <%= ENV['GIVEAWAY_DATABASE_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: giveaway_development
+
+test:
+  <<: *default
+  database: giveaway_test
+
+production:
+  <<: *default
+  database: giveaway_production
