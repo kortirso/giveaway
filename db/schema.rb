@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110085049) do
+ActiveRecord::Schema.define(version: 20180110092725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "configs", force: :cascade do |t|
+    t.integer "koef_eur"
+    t.integer "koef_usd"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name", default: "", null: false
+    t.string "image"
+    t.datetime "date_end"
+    t.integer "count_winners", default: 1
+    t.integer "count_losers", default: 0
+    t.string "url"
+    t.integer "price_tokens", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
 
   create_table "identities", force: :cascade do |t|
     t.integer "user_id"
