@@ -9,9 +9,9 @@ export default class NewEventBox extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: '1',
-      dateEnd: '2',
-      url: '3',
+      name: '',
+      dateEnd: '',
+      url: '',
       condLikes: false,
       condLikesUrl: '',
       countWinners: 1,
@@ -24,6 +24,10 @@ export default class NewEventBox extends React.Component {
   }
 
   // actions
+  _setBaseData(name, dateEnd, url) {
+    this.setState({name: name, dateEnd: dateEnd, url: url});
+  }
+
   _setConditions(condLikes, condLikesUrl) {
     this.setState({condLikes: condLikes, condLikesUrl: condLikesUrl});
   }
@@ -34,7 +38,7 @@ export default class NewEventBox extends React.Component {
       <ul className='accordion' data-accordion='' data-allow-all-closed='true' data-multi-expand='true'>
         <li className='accordion-item is-active' data-accordion-item=''>
           <a className='accordion-title'>Base Data</a>
-          <BaseDataBox name={this.state.name} dateEnd={this.state.dateEnd} url={this.state.url} />
+          <BaseDataBox name={this.state.name} dateEnd={this.state.dateEnd} url={this.state.url} onSetBaseData={this._setBaseData.bind(this)} />
         </li>
         <li className='accordion-item' data-accordion-item=''>
           <a className='accordion-title'>Conditions Form</a>

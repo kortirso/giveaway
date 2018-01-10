@@ -16,12 +16,10 @@ export default class ConditionsBox extends React.Component {
   // actions
   _handleChangeLikes() {
     this.props.onSetConditions(!this.state.likes, this.state.url);
-    this.setState({likes: !this.state.likes});
   }
 
   _handleChangeLikesUrl(event) {
     this.props.onSetConditions(this.state.likes, event.target.value);
-    this.setState({url: event.target.value});
   }
 
   // renders
