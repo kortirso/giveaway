@@ -1,0 +1,9 @@
+doctype html
+html lang='en'
+    head
+        title Giveaway
+        = csrf_meta_tags
+        = stylesheet_pack_tag 'application', media: 'all'
+    body
+        = yield
+        = javascript_pack_tag 'application'

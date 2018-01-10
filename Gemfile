@@ -36,6 +36,9 @@ gem 'figaro'
 # Code analyzation
 gem 'rubocop', '~> 0.49.1', require: false
 
+# Use Slim as the templating engine. Better than ERB
+gem 'slim'
+
 group :development, :test do
     gem 'factory_bot_rails'
     gem 'rails-controller-testing'
