@@ -41,6 +41,10 @@ gem 'slim'
 
 # Authentication
 gem 'devise', github: 'plataformatec/devise'
+gem 'omniauth-instagram'
+
+# I18n
+gem 'route_translator'
 
 group :development, :test do
     gem 'capybara'
