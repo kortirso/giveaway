@@ -3,6 +3,7 @@ class User < ApplicationRecord
     devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: %i[instagram]
 
     has_many :identities, dependent: :destroy
+    has_many :events
 
     validates :username, presence: true, uniqueness: true
 

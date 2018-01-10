@@ -1,5 +1,6 @@
 RSpec.describe Event, type: :model do
     it { should belong_to :user }
+    it { should have_one(:cond_like).dependent(:destroy) }
     it { should validate_presence_of :name }
     it { should validate_presence_of :user_id }
     it { should validate_presence_of :date_end }
@@ -29,6 +30,10 @@ RSpec.describe Event, type: :model do
 
             it 'returns price in RUR for RUR' do
                 expect(event.price_in_currency('RUR')).to eq event.price_tokens
+            end
+
+            it 'returns 1 for UNKNOWN currency' do
+                expect(event.price_in_currency('EEE')).to eq 1
             end
         end
     end

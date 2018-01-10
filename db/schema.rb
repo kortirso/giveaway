@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110092725) do
+ActiveRecord::Schema.define(version: 20180110102220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cond_likes", force: :cascade do |t|
+    t.integer "event_id"
+    t.string "url", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_cond_likes_on_event_id"
+  end
 
   create_table "configs", force: :cascade do |t|
     t.integer "koef_eur"

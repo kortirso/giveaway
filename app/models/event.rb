@@ -2,6 +2,8 @@
 class Event < ApplicationRecord
     belongs_to :user
 
+    has_one :cond_like, dependent: :destroy
+
     validates :name, :user_id, :date_end, :count_winners, :count_losers, :url, :price_tokens, presence: true
 
     def price_in_currency(currency)
