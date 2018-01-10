@@ -5,7 +5,8 @@ nav.nav role='navigation'
         ul.menu.dropdown.vertical.medium-horizontal data-dropdown-menu=''
           li= link_to 'Main Page', root_path
           li= link_to 'Events', events_path
-          li= link_to 'New Event', new_event_path
+          - if current_user
+            li= link_to 'New Event', new_event_path
       .top-bar-right
         ul.menu.dropdown.vertical.medium-horizontal data-dropdown-menu=''
           - if current_user
