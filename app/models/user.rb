@@ -14,8 +14,13 @@ class User < ApplicationRecord
                 u.password = Devise.friendly_token[0, 20]
                 u.email = "#{auth.extra.raw_info[:username]}@instagram.com"
             end
+            user.update_token(auth.credentials[:token])
             user.identities.create(provider: auth.provider, uid: auth.uid)
             user
         end
+    end
+
+    def update_token(token)
+        update(token: token)
     end
 end

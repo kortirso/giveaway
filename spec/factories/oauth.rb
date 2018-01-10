@@ -9,11 +9,11 @@ FactoryBot.define do
         end
     end
 
-    factory :oauth_info, class: OmniAuth::AuthHash::InfoHash do
+    factory :oauth_info, class: OmniAuth::AuthHash do
         raw_info { build(:info) }
     end
 
-    factory :info, class: OmniAuth::AuthHash::InfoHash do
+    factory :info, class: OmniAuth::AuthHash do
         username { 'test_first_name' }
     end
 

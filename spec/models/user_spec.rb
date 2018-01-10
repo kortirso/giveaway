@@ -124,4 +124,14 @@ RSpec.describe User, type: :model do
             end
         end
     end
+
+    describe 'object methods' do
+        context '.update_token' do
+            let!(:user) { create :user }
+
+            it 'updates user token' do
+                expect { user.update_token('new.token') }.to change(user, :token).to('new.token')
+            end
+        end
+    end
 end
