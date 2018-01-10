@@ -1,0 +1,11 @@
+nav.nav {
+  background: #eee;
+
+  .top-bar {
+    background: none;
+
+    ul {
+      background: none;
+    }
+  }
+}
