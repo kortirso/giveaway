@@ -39,7 +39,12 @@ gem 'rubocop', '~> 0.49.1', require: false
 # Use Slim as the templating engine. Better than ERB
 gem 'slim'
 
+# Authentication
+gem 'devise', github: 'plataformatec/devise'
+
 group :development, :test do
+    gem 'capybara'
+    gem 'database_cleaner'
     gem 'factory_bot_rails'
     gem 'rails-controller-testing'
     gem 'rspec-rails'
@@ -54,4 +59,5 @@ end
 group :test do
     gem 'json_spec'
     gem 'shoulda-matchers'
+    gem 'simplecov', require: false
 end

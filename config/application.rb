@@ -20,7 +20,7 @@ module Giveaway
         config.load_defaults 5.1
 
         I18n.available_locales = %i[en ru]
-        config.i18n.default_locale = :ru
+        config.i18n.default_locale = :en
 
         config.active_record.schema_format = :ruby
         config.generators do |g|
