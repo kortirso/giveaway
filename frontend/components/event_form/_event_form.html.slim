@@ -1,4 +1,7 @@
-.grid-container
-  .grid-x
-    .cell.small-12
-      h1 New event form
+= javascript_pack_tag 'new_event_box'
+.new_event_page
+  .grid-container
+    .grid-x
+      .cell.small-12
+        h1 New event form
+        = react_component('NewEventBox')
