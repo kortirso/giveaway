@@ -13,7 +13,7 @@ export default class AdditionalBox extends React.Component {
 
   render() {
     return (
-      <div className=''>
+      <div className='accordion-content' data-tab-content=''>
         <p>Additional Information</p>
       </div>
     );

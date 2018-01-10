@@ -2,4 +2,30 @@
   h1 {
     text-align: left;
   }
+
+  .accordion {
+    .accordion-item {
+      .accordion-content {
+        .block {
+          border: 1px solid #eee;
+          padding: 15px;
+
+          .block_input {
+            position: relative;
+
+            input {
+              position: absolute;
+              top: 5px;
+              left: 0;
+              margin-bottom: 0;
+            }
+
+            label {
+              padding-left: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

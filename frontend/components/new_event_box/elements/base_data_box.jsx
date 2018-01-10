@@ -16,7 +16,7 @@ export default class BaseDataBox extends React.Component {
 
   render() {
     return (
-      <div className=''>
+      <div className='accordion-content' data-tab-content=''>
         <p>Base Data Form</p>
       </div>
     );
