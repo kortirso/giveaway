@@ -46,6 +46,9 @@ gem 'omniauth-instagram'
 # I18n
 gem 'route_translator'
 
+# HTTP Service
+gem 'httparty', '0.15.6'
+
 group :development, :test do
     gem 'capybara'
     gem 'database_cleaner'

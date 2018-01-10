@@ -84,6 +84,8 @@ GEM
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     hashie (3.5.7)
+    httparty (0.15.6)
+      multi_xml (>= 0.5.2)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
@@ -278,6 +280,7 @@ DEPENDENCIES
   factory_bot_rails
   figaro
   foreman
+  httparty (= 0.15.6)
   json_spec
   listen (= 3.1.5)
   omniauth-instagram
