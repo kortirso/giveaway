@@ -1,11 +1,35 @@
-nav.nav {
+header {
   background: #eee;
 
-  .top-bar {
-    background: none;
+  nav.nav {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 0;
 
-    ul {
-      background: none;
+    ul.menu {
+      margin: 0;
+      list-style: none;
+      padding: 0;
+
+      li {
+        display: inline-block;
+        margin-right: 20px;
+
+        a {
+          color: #000;
+
+          &:visited {
+            color: #000;
+          }
+        }
+      }
+    }
+
+    .login {
+      position: absolute;
+      right: 0;
+      top: 25px;
     }
   }
 }

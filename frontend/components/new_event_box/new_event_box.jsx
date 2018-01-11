@@ -2,8 +2,6 @@ import React from 'react';
 import BaseDataBox from 'components/new_event_box/elements/base_data_box';
 import ConditionsBox from 'components/new_event_box/elements/conditions_box';
 import AdditionalBox from 'components/new_event_box/elements/additional_box';
-import "foundation-sites";
-const $ = require("jquery");
 
 export default class NewEventBox extends React.Component {
   constructor() {
@@ -20,7 +18,6 @@ export default class NewEventBox extends React.Component {
   }
 
   componentDidMount() {
-    $('.accordion').foundation();
   }
 
   // actions

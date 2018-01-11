@@ -1,24 +1,12 @@
-nav.nav role='navigation'
-  .grid-container
-    .top-bar#giveaway_menu
-      .top-bar-left
-        ul.menu.dropdown.vertical.medium-horizontal data-dropdown-menu=''
-          li= link_to 'Main Page', root_path
-          li= link_to 'Events', events_path
-          - if current_user
-            li= link_to 'New Event', new_event_path
-      .top-bar-right
-        ul.menu.dropdown.vertical.medium-horizontal data-dropdown-menu=''
-          - if current_user
-            li= link_to 'Sign Out', users_sign_out_path, method: :delete
-          - else
-            li
-              a data-open='login' Sign In
-    .title-bar data-responsive-toggle='example-menu'
-      button.menu-icon type='button' data-toggle='giveaway_menu'
-      .logo= link_to 'Main Page', root_path
-#login.reveal.tiny data-reveal=''
-  h2 Login Form
-  = link_to 'Login through Instagram', localized_omniauth_path(:instagram), title: 'Login through Instagram'
-  button.close-button aria-label=('Close modal') data-close='' type='button'
-    span aria-hidden='true' &times;
+header
+  nav.nav
+    ul.menu
+      li= link_to 'Main Page', root_path
+      li= link_to 'Events', events_path
+      - if current_user
+        li= link_to 'New Event', new_event_path
+    .login
+      - if current_user
+        = link_to 'Sign Out', users_sign_out_path, method: :delete
+      - else
+        = link_to 'Login through Instagram', localized_omniauth_path(:instagram), title: 'Login through Instagram'
