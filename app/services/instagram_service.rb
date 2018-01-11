@@ -3,6 +3,8 @@ require 'httparty'
 class InstagramService
     include HTTParty
 
+    BASE_URI = 'https://api.instagram.com/v1/'
+
     attr_reader :access_token
 
     def initialize(args = {})
@@ -22,15 +24,15 @@ class InstagramService
     end
 
     def self_followed_by
-        request(select_uri(type: __method__)
+        request(select_uri(type: __method__))
     end
 
     private def select_uri(args = {})
         case args[:type]
-            when :media_by_shortcode then "https://api.instagram.com/v1/media/shortcode/#{args[:shortcode]}?access_token=#{access_token}"
-            when :media_likes then "https://api.instagram.com/v1/media/#{args[:media_id]}/likes?access_token=#{access_token}"
-            when :media_comments then "https://api.instagram.com/v1/media/#{args[:media_id]}/comments?access_token=#{access_token}"
-            when :self_followed_by then "https://api.instagram.com/v1/users/self/followed-by?access_token=#{access_token}"
+            when :media_by_shortcode then "#{BASE_URI}media/shortcode/#{args[:shortcode]}?access_token=#{access_token}"
+            when :media_likes then "#{BASE_URI}media/#{args[:media_id]}/likes?access_token=#{access_token}"
+            when :media_comments then "#{BASE_URI}media/#{args[:media_id]}/comments?access_token=#{access_token}"
+            when :self_followed_by then "#{BASE_URI}users/self/followed-by?access_token=#{access_token}"
         end
     end
 
