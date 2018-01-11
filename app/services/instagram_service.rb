@@ -1,9 +1,10 @@
 require 'httparty'
 
+# Instagram service for getting data about photos
 class InstagramService
     include HTTParty
 
-    BASE_URI = 'https://api.instagram.com/v1/'
+    BASE_URI = 'https://api.instagram.com/v1/'.freeze
 
     attr_reader :access_token
 
