@@ -1,4 +1,6 @@
 .new_event_page {
+  padding-top: 25px;
+
   h1 {
     text-align: left;
   }
