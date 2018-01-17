@@ -1,3 +1,6 @@
-const { environment } = require('@rails/webpacker')
+const { environment } = require("@rails/webpacker");
 
-module.exports = environment
+const babelLoader = environment.loaders.get("babel");
+babelLoader.include = /node_modules\/foundation-sites/;
+
+module.exports = environment;
