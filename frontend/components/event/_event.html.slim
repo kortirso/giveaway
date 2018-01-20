@@ -6,7 +6,7 @@
     h2 Conditions
     - if event.cond_like.present?
         p= "You need like this post https://www.instagram.com/p/#{event.cond_like.url}"
-    h2= "List of likers (#{event.likers.size})"
+    h2 List of likers
     .row
         - event.likers.each do |liker|
             .col-2= liker
