@@ -1,5 +1,7 @@
 # Represents events for giveawaing
 class Event < ApplicationRecord
+    serialize :likers
+
     belongs_to :user
 
     has_one :cond_like, dependent: :destroy
