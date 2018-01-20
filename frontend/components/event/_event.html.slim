@@ -1,5 +1,12 @@
 .event_page
   .container
     h1 Event
-    p= event.name
-    p= event.url
+    p= "Event name - #{event.name}"
+    p= "Event post - https://www.instagram.com/p/#{event.url}"
+    h2 Conditions
+    - if event.cond_like.present?
+        p= "You need like this post https://www.instagram.com/p/#{event.cond_like.url}"
+    h2= "List of likers (#{event.likers.size})"
+    .row
+        - event.likers.each do |liker|
+            .col-2= liker
