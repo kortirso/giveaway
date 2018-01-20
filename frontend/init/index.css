@@ -4,7 +4,7 @@
 
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 24px;
   font-weight: 300;
 
@@ -21,11 +21,6 @@ body {
 
   h2 {
     font-size: 30px;
-  }
-
-  .row {
-    max-width: 1200px;
-    margin: 0 auto;
   }
 }
 

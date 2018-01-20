@@ -26,12 +26,12 @@ export default class BaseDataBox extends React.Component {
   // renders
   render() {
     return (
-      <div className='accordion-content' data-tab-content=''>
-        <div>
+      <div>
+        <div className='input'>
           <label htmlFor='for_name'>Name of Event</label>
           <input type='text' id='for_name' value={this.state.name} onChange={this._handleChangeName.bind(this)} />
         </div>
-        <div>
+        <div className='input'>
           <label htmlFor='for_url'>Url for photo</label>
           <input type='text' id='for_url' value={this.state.url} onChange={this._handleChangeUrl.bind(this)} />
         </div>

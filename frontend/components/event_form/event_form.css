@@ -3,29 +3,46 @@
 
   h1 {
     text-align: left;
+    margin-bottom: 25px;
   }
 
-  .accordion {
-    .accordion-item {
-      .accordion-content {
-        .block {
-          border: 1px solid #eee;
-          padding: 15px;
+  .tab-content {
+    padding: 25px 0;
 
-          .block_input {
-            position: relative;
+    .input {
+      width: 400px;
+      margin-bottom: 10px;
 
-            input {
-              position: absolute;
-              top: 5px;
-              left: 0;
-              margin-bottom: 0;
-            }
+      label {
+        display: block;
+      }
 
-            label {
-              padding-left: 20px;
-            }
-          }
+      input {
+        width: 100%;
+        padding: 5px;
+        border-radius: 2px;
+        border: 1px solid rgb(220, 220, 220);
+      }
+    }
+
+    .box_input {
+      margin-bottom: 10px;
+
+      label {
+        margin-bottom: 0;
+      }
+
+      input {
+        margin-right: 10px;
+        position: relative;
+        top: -2px;
+      }
+    }
+
+    #accordion {
+      .card-header {
+        button {
+          color: #000;
         }
       }
     }
