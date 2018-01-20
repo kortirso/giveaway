@@ -8,6 +8,7 @@ export default class NewEventBox extends React.Component {
   constructor() {
     super();
     this.state = {
+      error: false,
       name: '',
       dateEnd: '',
       url: '',
@@ -36,20 +37,39 @@ export default class NewEventBox extends React.Component {
     this.setState({condComments: condComments});
   }
 
+  // checks
+  _checkFormParams(){
+    if(this.state.name == '') return false;
+    if(this.state.url == '') return false;
+    if(this.state.condLikes && this.state.condLikesUrl == '') return false;
+    return true;
+  }
+
+  _checkCurrentErrorStatus() {
+    if(this.state.error) return 'new_event_form with_error';
+    return 'new_event_form';
+  }
+
+  // calls
   _saveForm() {
-    $.ajax({
-      method: 'POST',
-      url: '../events.json',
-      data: {event: {name: this.state.name, url: this.state.url}, conditions: {likes: {present: this.state.condLikes, url: this.state.condLikesUrl}, comments: {present: this.state.condComments}}},
-      success: (result) => {
-      }
-    });
+    if(this._checkFormParams()) {
+      $.ajax({
+        method: 'POST',
+        url: '../events.json',
+        data: {event: {name: this.state.name, url: this.state.url}, conditions: {likes: {present: this.state.condLikes, url: this.state.condLikesUrl}, comments: {present: this.state.condComments}}},
+        success: (result) => {
+        }
+      });
+      this.setState({error: false});
+    } else {
+      this.setState({error: true});
+    }
   }
 
   // renders
   render() {
     return (
-      <div className='new_event_form'>
+      <div className={this._checkCurrentErrorStatus()}>
         <ul className='nav nav-tabs' id='myTab' role='tablist'>
           <li className='nav-item'>
             <a className='nav-link active' id='home-tab' data-toggle='tab' href='#home' role='tab' aria-controls='home' aria-selected='true'>Event</a>

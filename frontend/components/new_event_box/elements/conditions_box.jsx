@@ -27,6 +27,12 @@ export default class ConditionsBox extends React.Component {
     this.props.onSetComments(!this.state.comments);
   }
 
+  // checks
+  _checkLikeValuePresent() {
+    if(!this.state.likes) return 'present';
+    if(this.state.url != '') return 'present';
+  }
+
   // renders
   _renderCondLikes() {
     return (
@@ -44,9 +50,9 @@ export default class ConditionsBox extends React.Component {
     return (
       <div>
         {this.state.likes &&
-          <div className='input'>
+          <div className='input required'>
             <label htmlFor='like_url'>Url for photo</label>
-            <input type='text' id='like_url' value={this.state.url} onChange={this._handleChangeLikesUrl.bind(this)} />
+            <input type='text' id='like_url' className={this._checkLikeValuePresent()} value={this.state.url} onChange={this._handleChangeLikesUrl.bind(this)} />
           </div>
         }
       </div>

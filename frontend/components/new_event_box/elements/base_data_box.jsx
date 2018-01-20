@@ -23,17 +23,22 @@ export default class BaseDataBox extends React.Component {
     this.props.onSetBaseData(this.state.name, this.state.dateEnd, event.target.value);
   }
 
+  // checks
+  _checkValuePresent(value) {
+    if(value != '') return 'present';
+  }
+
   // renders
   render() {
     return (
       <div>
-        <div className='input'>
+        <div className='input required'>
           <label htmlFor='for_name'>Name of Event</label>
-          <input type='text' id='for_name' value={this.state.name} onChange={this._handleChangeName.bind(this)} />
+          <input type='text' id='for_name' className={this._checkValuePresent(this.state.name)} value={this.state.name} onChange={this._handleChangeName.bind(this)} />
         </div>
-        <div className='input'>
+        <div className='input required'>
           <label htmlFor='for_url'>Url for photo</label>
-          <input type='text' id='for_url' value={this.state.url} onChange={this._handleChangeUrl.bind(this)} />
+          <input type='text' id='for_url' className={this._checkValuePresent(this.state.url)} value={this.state.url} onChange={this._handleChangeUrl.bind(this)} />
         </div>
       </div>
     );
