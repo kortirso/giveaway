@@ -1,5 +1,5 @@
 # Service for saving events with conditions from new event form
-class SaveEventService
+class EventSaveService
     attr_reader :event_params, :conditions_params, :user_id
 
     def initialize(args)

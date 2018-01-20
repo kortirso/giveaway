@@ -10,7 +10,7 @@ class EventsController < ApplicationController
     def new; end
 
     def create
-        SaveEventService.new(event: event_params, conditions: condition_params, user_id: current_user.id).call
+        EventSaveService.new(event: event_params, conditions: condition_params, user_id: current_user.id).call
     end
 
     private def event_params
