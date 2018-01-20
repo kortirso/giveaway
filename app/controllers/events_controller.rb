@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
     skip_before_action :verify_authenticity_token, only: %i[create]
+    before_action :find_events, only: %i[index]
+    before_action :find_event, only: %i[show]
 
     def index; end
 
@@ -17,5 +19,13 @@ class EventsController < ApplicationController
 
     private def condition_params
         params.require(:conditions).permit!.to_h
+    end
+
+    private def find_events
+        @events = Event.all
+    end
+
+    private def find_event
+        @event = Event.find(params[:id])
     end
 end
